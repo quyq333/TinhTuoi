@@ -12,7 +12,7 @@
         
         <form action="" name="=Age">
             <label for="tuoi">Nhập tuổi!!!</label>
-            <input type="number" id="age" name="tuoi">
+            <input type="number" required max="10000000" min="1" id="age" name="tuoi">
             <input type="button" value="Xong" onclick="Click()">
         </form>
         <p id="result"></p>
@@ -21,8 +21,17 @@
     <script>
         function Click(){
             var age = document.getElementById('age').value;
+            var realAge = Number(age)
+           
             
-            document.getElementById('result').innerHTML = "Tuổi của bạn là:" +age;
+            if(realAge<=0){
+                document.getElementById('result').innerHTML="Biết tự tính không cmm"
+            }else
+            {
+                document.getElementById('result').innerHTML = "Tuổi của bạn là:" + age;
+            }
+            
+           
         }
         
 
